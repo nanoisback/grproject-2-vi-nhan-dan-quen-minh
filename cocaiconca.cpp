@@ -567,7 +567,15 @@ int main(){
             case 3:
 
             case 4:
-                cout << "Feature not implemented yet." << endl;
+                if (All_Base.empty()) {
+                cout << "No bases to report.\n";
+                break;}
+
+                cout << "=== SYSTEM STATUS REPORT ===\n";
+                for (const auto& [id, base] : All_Base) {
+                cout << "\n>>> Base #" << id << ":\n";
+                base->printInfo();}
+                cout << "=============================\n";
                 break;
             default:
                 cout << "Invalid choice! Please try again." << endl;
